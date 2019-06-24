@@ -1,6 +1,12 @@
 import Sketch from "p5/lib/p5";
 /* eslint-disable */
 
+var posX = undefined;
+var posY = undefined;
+export function updatePos(x, y){
+  posX = x;
+  posY = y;
+}
 
 export function special(pointX, pointY) {
   var al = [];
@@ -37,9 +43,11 @@ export function special(pointX, pointY) {
   
   function Rays() {
     this.counter = 0;
+    pointX = posX != undefined ? posX : pointX;
+    pointY = posY != undefined ? posY : pointY;
     this.position = new Sketch.Vector( pointX, pointY );
-    this.velocity = new Sketch.Vector( 0, 5 );
-    this.acceleration = new Sketch.Vector( 0, 0 );
+    this.velocity = new Sketch.Vector( 0, 10 );
+    this.acceleration = new Sketch.Vector( 0, 20 );
     this.lifeSpan = 1;
   }
   
@@ -70,9 +78,8 @@ export function special(pointX, pointY) {
     var r = parseInt(p5.random(0,255))
     var g  = parseInt(p5.random(0,255))
     var b = parseInt(p5.random(0,255))
-    var a = this.lifeSpan + 3 > 3 ? 0 : this.lifeSpan + 3.2;
+    var a = this.lifeSpan + 2 > 2 ? 1 : this.lifeSpan + 2.2;
     var c = p5.color( 'rgba('+ r + ',' + g + ',' + b + ', ' + a + ')');
-    console.log(this.lifeSpan)
     p5.strokeWeight(0);
     p5.fill( c ); 
 
@@ -88,7 +95,7 @@ export function special(pointX, pointY) {
   * be filled infinitely]
   */
   Rays.prototype.isDead = function() {
-    if( this.lifeSpan < -3 )
+    if( this.lifeSpan < -2 )
       return true;
     else
       return false;

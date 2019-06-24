@@ -46,3 +46,21 @@ canvas {
   width: 100% !important;
   height: 100% !important ;
 } */
+
+#trackbutton {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.videobox {
+  display: none;
+}
+
+.borderBox {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 150px;
+  height: 150px;
+}
