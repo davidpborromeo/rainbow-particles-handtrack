@@ -31,3 +31,18 @@
     transform: rotate(360deg);
   }
 }
+
+
+html, body {
+	font-family: 'Play', sans-serif;
+	background: #2b2b2b;
+	margin: 0;
+}
+/* 
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100% !important;
+  height: 100% !important ;
+} */
