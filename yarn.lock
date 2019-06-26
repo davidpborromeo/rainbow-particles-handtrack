@@ -1115,6 +1115,10 @@
     "@svgr/plugin-svgo" "^4.0.3"
     loader-utils "^1.1.0"
 
+"@tensorflow-models/posenet@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@tensorflow-models/posenet/-/posenet-2.1.0.tgz#df9913717af07d93066b215e008759d2d3cbe750"
+
 "@tensorflow/tfjs-converter@0.6.7":
   version "0.6.7"
   resolved "https://registry.yarnpkg.com/@tensorflow/tfjs-converter/-/tfjs-converter-0.6.7.tgz#d45c5f17c5c3de638ded5354d16d450a8cb97676"

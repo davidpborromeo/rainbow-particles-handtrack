@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { special, setup, draw, updatePos } from './libs/special'
-import {bindPage} from './libs/bodytrack';
-// import {handtrack, toggleVideo} from './libs/handtrack';
-import * as posenet from '@tensorflow-models/posenet';
+import {handtrack, toggleVideo} from './libs/handtrack';
 
 
 class App extends Component {
@@ -23,6 +21,7 @@ class App extends Component {
   componentDidMount(){
     special(this.state.positionX, this.state.positionY);
     handtrack(this.myVideo.current, this.myCanvas.current, this.getPosition);
+    
   }
 
   getPosition(val) {
@@ -41,16 +40,9 @@ class App extends Component {
           Toggle Video
         </button>
 
-        <video id="video" playsinline
-        ref={this.myVideo}
-        style=" -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        display: none;
-        ">
-        </video>
-        <canvas id="output" ref={this.myCanvas} />
+        <video className="videobox canvasbox" autoplay="autoplay" ref={this.myVideo}></video>
+
+        <canvas id="canvas" className="borderBox canvasbox" ref={this.myCanvas}></canvas>
       </div>
     );
   }
